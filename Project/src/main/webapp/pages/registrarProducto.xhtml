@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../main.xhtml">
+	
+	<ui:define name="content">
+	    <h:form id="registroProductoForm">
+	    	<h:panelGrid columns="2" style="font-size: 13px;">
+	    		<f:facet name="header">
+	    			<h:outputText value="PRODUCTO"></h:outputText>
+	    		</f:facet>
+	    			    		
+	    		<h:outputText value="TIPO PRODUCTO: " for="tipoProductocmb"></h:outputText>
+	    		<p:selectOneMenu id="tipoProductocmb" style="width:180px;">
+	    			<f:selectItem itemLabel="Seleccione..." itemValue="" noSelectionOption="true"/>
+	    			
+	    		</p:selectOneMenu>
+	    		
+	    		<h:outputText value="CALIDAD: " for="calidadcmb"/>
+	    		<p:selectOneMenu id="calidadcmb" style="width:180px;">
+	    			<f:selectItem itemLabel="Seleccione..." itemValue="" noSelectionOption="true"/>
+	    		</p:selectOneMenu>
+	    		
+	    		<h:outputText value="UN. MEDIDA: " for="unidadMedidacmb"/>
+	    		<p:selectOneMenu id="unidadMedidacmb" style="width:180px;">
+	    			<f:selectItem itemLabel="Seleccione..." itemValue="" noSelectionOption="true"/>
+	    		</p:selectOneMenu>
+	    		
+	    		<h:outputText value="Tarifa" for="tarifatxt"/>
+	    		<p:inputText id="tarifatxt" value=""/>
+	    		
+	    		<h:outputText value="MARCA: " for="marcacmb"/>
+	    		<p:selectOneMenu id="marcacmb" style="width:180px;">
+	    			<f:selectItem itemLabel="Seleccione..." itemValue="" noSelectionOption="true"/>
+	    		</p:selectOneMenu>
+	    		
+	    		<p:commandButton value="Guardar" icon="ui-icon-disk"></p:commandButton>
+	    		<p:commandButton value="Cancelar" icon="ui-icon-arrowreturnthick-1-w"></p:commandButton>
+	    	</h:panelGrid>
+	    </h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

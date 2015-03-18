@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+
+	<ui:composition>
+		<h:form>
+				
+			<p:menu toggleable="true" style="width:100%" scrollable="null">
+				<p:menuitem value="VIAJES" url="/pages/mostrarViajes.faces" icon="ui-icon-transferthick-e-w"/>
+		        
+		       	<p:submenu label="CONFIG" icon="ui-icon-gear">
+		       		<p:menuitem value="CLIENTES" url="/registros/registrarCliente.faces"/>
+		       		<p:menuitem value="PRODUCTOS" url="/pages/registrarProducto.faces"/>
+		       		<p:menuitem value="MARCAS" url="/registros/registroMarca.faces"/>
+		       		<p:menuitem value="CALIDADES" url="/registros/registrarCalidad.faces"/>
+		       		<p:menuitem value="PUESTOS" url="/registros/registrarPuesto.faces"/>
+		       		<p:menuitem value="UNIDAD MEDIDA" url="/registros/registrarUnidadMedida.faces"/>
+		       		<p:menuitem value="TARIFAS" url="/registros/registrarTarifa.faces"/>
+		       		<p:menuitem value="VEHICULO" url="/registros/registrarVehiculo.faces"/>
+		       		<p:menuitem value="TRABAJADOR" url="/pages/registrarConductor.faces"/>
+		       		<p:menuitem value="ADELANTO" url="/registros/registrarAdelanto.faces"/>
+		       	</p:submenu>
+		    </p:menu>    
+		</h:form>
+	</ui:composition>
+	
+</h:body>
+</html>
