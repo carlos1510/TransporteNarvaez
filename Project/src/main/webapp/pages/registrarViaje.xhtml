@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	
+	<h:head>
+		
+	</h:head>
+	<h:body>
+	
+	
+<ui:composition template="/main.xhtml">
+		<ui:define name="content">
+	
+	    <h:form id="idRegistrarViaje">
+	    	<p:panelGrid columns="1" style="font-size: 14px;">
+	    		<h:panelGroup>
+	    			<h:panelGrid columns="2" cellspacing="10">
+	    				<h:outputText value="Codigo:"/>
+	    				<p:inputText id="txtCodigo" />
+	    			</h:panelGrid>
+
+	    			<h:panelGrid columns="2" cellspacing="30">
+	    				<p:commandButton id="btnAgregar" value="Agregar Servicio" icon="ui-icon-plusthick" oncomplete="PF('dlg2').show()" />
+	    				<p:commandButton value="Agregar Costo de Viaje" icon="ui-icon-plusthick"/>
+	    			</h:panelGrid>
+	    			<p:dataTable >
+	    				<p:column headerText="Servicio">
+	    					<h:outputText value=""/>
+	    				</p:column>
+	    				<p:column headerText="Precio">
+	    					<h:outputText value=""/>
+	    				</p:column>
+	    				<p:column headerText="Estado">
+	    					<h:outputText value=""/>
+	    				</p:column>
+	    				
+	    				<p:columnGroup id="idTotal" type="footer">
+	    					<p:row>
+	    						<p:column colspan="2" style="text-align:right" footerText="Total:" />
+	    						<p:column footerText="0.00"/>
+	    					</p:row>
+	    				</p:columnGroup>
+	    			</p:dataTable>
+	    			
+	    		</h:panelGroup>
+	    	</p:panelGrid>
+	    	<div style="font-size:14px;">
+	    		<p:dialog id="dlg2" header="Agregar Nuevo Servicio" widgetVar="dlg2" style=""  modal="true" appendTo="@(body)" width="930" height="400">
+    			<h:form id="agregarServicioForm">
+    				<p:layout style="min-width:900px;min-height:400px;">
+    					<p:layoutUnit position="west" size="220">
+    						<h:form id="datoform" >
+    							<p:fieldset id="datosProductoFieldset" style="text-align:center">
+    								<p:multiSelectListbox value="#{productoBean.selection}" effect="slide" header="Marca" showHeaders="true" >
+    									<f:selectItems value="#{productoBean.marcas}"/>
+    								</p:multiSelectListbox>
+    							</p:fieldset>
+    							<h:panelGrid columns="1" style="font-size:12px;">
+    								<h:outputText value="CANTIDAD:"/>
+    								<p:inputText id="cantidadtxt"/>
+    								
+    								<h:outputText value="UNIDAD MEDIDA:"/>
+    								<p:selectOneMenu id="unidadMedidacmb" style="width:180px" >
+    									<f:selectItem itemLabel="Seleccione.." itemValue="" noSelectionOption="true"/>
+    								</p:selectOneMenu>
+    								
+    								<h:outputText value="PRECIO VENTA"/>
+    								<p:inputText id="precioVentatxt"/>
+    								
+    								<h:outputText value="TOTAL"/>
+    								<p:inputText id="totaltxt"/>
+    								
+    								<h:panelGroup>
+    									<p:commandButton value="AGREGAR" icon="ui-icon-plusthick"/>
+    									<p:commandButton value="CANCELAR" icon="ui-icon-arrowreturnthick-1-w"/>
+    								</h:panelGroup>
+    							</h:panelGrid>
+    						</h:form>
+    					</p:layoutUnit>
+    					<p:layoutUnit position="center" >
+    						
+    							<div class="stylo" style="position: absolute; margin: 0; padding: 0;">
+    								<h:panelGrid columns="2" style="font-size:11px; position: relative">
+    									<h:panelGrid columns="2" width="300" >
+    										<f:facet name="header">
+    											<h:panelGroup style="display:block; text-align:center;font-weight: normal;">
+    												<h:outputText value="TRASLADO MERCADERIA"/>
+    											</h:panelGroup>
+    											<h:panelGroup style="display:block;font-weight: normal; text-align:left">
+    												<h:outputText value="DIRECCION ORIGEN:"/>
+    											</h:panelGroup>
+    											<h:panelGroup style="float:left">
+    												<p:inputText id="txtDirOrigen" size="45"/>
+    											</h:panelGroup>
+    										</f:facet>
+    								
+    										<h:outputText for="button" value="HORA PARTIDA"/>
+    										<p:calendar id="horaPartidaTime" onfocus="false" size="10" pattern="HH:mm a" timeOnly="true" showOn="button"></p:calendar>
+    								
+    										<h:outputText value="CONDUCTOR" for="conductorcmb"/>
+    										<p:selectOneMenu id="conductorcmb" style="width:180px" >
+    											<f:selectItem itemLabel="Seleccione.." itemValue="" noSelectionOption="true"/>
+    										</p:selectOneMenu>
+    									</h:panelGrid> 
+    							
+    									<h:panelGrid columns="2" width="300" style="position:relative">
+    										<f:facet name="header">
+    											<h:panelGroup style="float:left; font-weight: normal; display:block;">
+    												<h:outputText value="NUMERO GUIA REMISION:"/>
+    												<p:inputText id="txtGuiaRemision"/>
+    											</h:panelGroup>
+    											<h:panelGroup style="display:block;font-weight: normal; text-align:left">
+    												<h:outputText value="DIRECCION DESTINO:"/>
+    											</h:panelGroup>
+    											<h:panelGroup style="float:left">
+    												<p:inputText id="txtDirDestino" size="45"/>
+    											</h:panelGroup>
+    										</f:facet>
+    										<h:outputText value="HORA LLEGADA: " for="horaLlegadaTime"/>
+    										<p:calendar id="horaLlegadaTime" onfocus="false" size="10" pattern="HH:mm a" timeOnly="true" showOn="button"></p:calendar>
+    								
+    										<h:outputText value="VEHICULO: " for="textVehiculo"/>
+    										<h:outputText id="textVehiculo" value="MN000"/>
+    									</h:panelGrid>
+    									<f:facet name="footer">
+    										<h:panelGroup>
+    											<p:fieldset id="seleccionarProducto" legend="Agregar Detalle" style="margin-top:20px;">
+    												<p:outputPanel id="dropArea">
+    													<p:dataTable id="seleccioneProductoTable" >
+    														<p:column headerText="MARCA">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="TIPO PRODUCTO">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="CALIDAD">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="CANTIDAD">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="U. M.">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="PUESTO DESTINO">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="P. V.">
+    															<h:outputText value=""/>
+    														</p:column>
+    														<p:column headerText="TOTAL">
+    															<h:outputText value=""/>
+    														</p:column>
+    													</p:dataTable>
+    												</p:outputPanel>
+    											</p:fieldset>
+    										</h:panelGroup>
+    										<br></br>
+    										<h:panelGroup>
+    											<p:commandButton value="GUARDAR" icon="ui-icon-disk"></p:commandButton>
+    											&nbsp;&nbsp;
+    											<p:commandButton value="VALIDAR" icon="ui-icon-check"></p:commandButton>
+    										</h:panelGroup>
+    									</f:facet>
+    								</h:panelGrid>
+    							</div>
+    						</p:layoutUnit>
+    					</p:layout>
+    				</h:form>
+				</p:dialog>
+	    	</div>
+	    </h:form>
+	     
+	</ui:define>
+</ui:composition>
+	</h:body>
+</html>

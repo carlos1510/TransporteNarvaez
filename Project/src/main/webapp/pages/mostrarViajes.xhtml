@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
+	
+	<ui:define name="content">
+	    <h:form>
+	    	<h:panelGrid columns="1" style="font-size: 14px;">
+	    		<p:button value="NUEVO VIAJE" icon="ui-icon-document" outcome="registrarViaje.faces" />
+	    		
+	    		<p:panelGrid columns="1">
+	    			<p:dataTable paginator="true" id="listaViajes" rows="15">
+	    				<f:facet name="header" >
+	    					Lista de Viajes
+	    				</f:facet>
+	    				<p:column headerText="CODIGO">
+	    					<h:outputText value="f"/>
+	    				</p:column>
+	    				<p:column headerText="FEC. IDA">
+	    					<h:outputText value="d"/>
+	    				</p:column>
+	    				<p:column headerText="FEC. VUELTA">
+	    					<h:outputText value="d"/>
+	    				</p:column>
+	    				<p:column headerText="CONDUCTOR">
+	    					<h:outputText value="s"/>
+	    				</p:column>
+	    				<p:column headerText="PLACA">
+	    					<h:outputText value="f"/>
+	    				</p:column>
+	    				<p:column headerText="ESTADO">
+	    					<h:outputText value="g"/>
+	    				</p:column>
+	    				<p:column headerText="ACCIONES">
+	    					<h:panelGroup>
+	    						<p:commandButton title="Editar" icon="ui-icon-pencil"/>
+	    						<p:commandButton title="Eliminar" icon="ui-icon-close"/>
+	    					</h:panelGroup>
+	    				</p:column>
+	    			</p:dataTable>
+	    		</p:panelGrid>
+	    	</h:panelGrid>
+	    </h:form>
+	</ui:define>
+</ui:composition>

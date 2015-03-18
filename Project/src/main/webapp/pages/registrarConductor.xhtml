@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../main.xhtml">
+	<ui:define name="content">
+	   <h:form id="registroConductorForm">
+	   		
+	   			<h:panelGrid columns="4" cellspacing="10" style="font-size: 13px;">
+	   				<f:facet name="header">
+	   				<h:outputText value="CONDUCTOR"/>
+	   				</f:facet>
+	   				<h:outputText value="DNI: " for="dnitxt"/>
+	   				<p:inputText id="dnitxt"/>
+	   				
+	   				<h:outputText value="N° CUENTA: " for="numeroCuentatxt" style="padding-top:10px;"/>
+	   				<p:inputText id="numeroCuentatxt"/>
+	   				
+	   				<h:outputText value="NOMBRE: " for="nombretxt"/>
+	   				<p:inputText id="nombretxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<h:outputText value="APELLIDOS: " for="apellidostxt"/>
+	   				<p:inputText id="apellidostxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<h:outputText value="N° LICENCIA: " for="numeroLicenciatxt"/>
+	   				<p:inputText id="numeroLicenciatxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<h:outputText value="N° ----: " for="numerotxt"/>
+	   				<p:inputText id="numerotxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<h:outputText value="CELULAR: " for="celulartxt"/>
+	   				<p:inputText id="celulartxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<h:outputText value="DIRECCION: " for="direcciontxt"/>
+	   				<p:inputText id="direcciontxt"/>
+	   				
+	   				<h:outputText value="&nbsp;" />
+	   				<h:outputText value="&nbsp;" />
+	   				
+	   				<f:facet name="footer">
+	    			<h:panelGroup>
+	    				<p:commandButton value="Guardar"></p:commandButton>
+	    				&nbsp;&nbsp;
+	    				<p:commandButton value="Cancelar"></p:commandButton>
+	    			</h:panelGroup>
+	    		</f:facet>
+	   				
+	   			</h:panelGrid>
+	   			
+	   </h:form>
+	</ui:define>
+</ui:composition>
+</html>

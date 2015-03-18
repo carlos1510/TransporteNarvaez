@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../main.xhtml">
+	
+	<ui:define name="content">
+	    <h:form>
+	    	<h:panelGrid columns="2" style="font-size: 13px;">
+	    		<f:facet name="header">
+	    			<h:outputText value="CLIENTE"/>
+	    		</f:facet>
+	    		<p:outputLabel value="NOMBRE: " for="nombretxt"/>
+	    		<p:inputText id="nombretxt"/>
+	    		
+	    		<p:outputLabel value="APELLIDOS: " for="apellidostxt"/>
+	    		<p:inputText id="apellidostxt"/>
+	    		
+	    		<p:outputLabel value="DNI: " for="dnitxt" />
+	    		<p:inputText id="dnitxt"/>
+	    		
+	    		<p:outputLabel value="DIRECCION: " for="direcciontxt"/>
+	    		<p:inputText id="direcciontxt"/>
+	    		
+	    		<p:outputLabel value="TELEFONO/CELULAR: " for="telefonoCelulartxt" />
+	    		<p:inputText id="telefonoCelulartxt" />
+
+	    		<f:facet name="footer">
+	    			<h:panelGroup>
+	    				<p:commandButton value="GUARDAR"></p:commandButton>
+	    				&nbsp;&nbsp;
+	    				<p:commandButton value="CANCELAR"></p:commandButton>
+	    			</h:panelGroup>
+	    		</f:facet>
+	    	</h:panelGrid>
+	    </h:form>
+	</ui:define>
+	
+</ui:composition>
+</html>

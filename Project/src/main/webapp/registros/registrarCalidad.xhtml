@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../main.xhtml">
+	
+	<ui:define name="content">
+	    <h:form id="registroCalidadForm">
+	    	<h:panelGrid columns="2" style="font-size: 13px;">
+	    		<f:facet name="header">
+	    			<h:outputText value="CALIDAD"/>
+	    		</f:facet>
+	    		
+	    		<h:outputText value="Nombre: " for="nombretxt"/>
+	    		<p:inputText id="nombretxt" />
+	    		
+	    		<f:facet name="footer">
+	    			<h:panelGroup>
+	    				<p:commandButton value="Guardar"></p:commandButton>
+	    				&nbsp;&nbsp;
+	    				<p:commandButton value="Cancelar"></p:commandButton>
+	    			</h:panelGroup>
+	    		</f:facet>
+	    	</h:panelGrid>
+	    </h:form>
+	</ui:define>
+</ui:composition>
+</html>
